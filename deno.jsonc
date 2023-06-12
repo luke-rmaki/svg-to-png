@@ -1,0 +1,9 @@
+{
+  "tasks": {
+    "dev": "deno run --watch --allow-env --allow-read --allow-write --allow-run --allow-net main.ts",
+    "run": "deno run --allow-env --allow-read --allow-write --allow-run --allow-net main.ts"
+  },
+  "imports": {
+    "puppeteer": "https://deno.land/x/puppeteer@16.2.0/mod.ts"
+  }
+}
