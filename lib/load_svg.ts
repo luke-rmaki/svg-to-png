@@ -3,10 +3,11 @@ import { Page } from "https://deno.land/x/puppeteer@16.2.0/mod.ts";
 import { Options } from "../types.ts";
 
 export async function load_svg(
-  filePath: string,
+  path: string,
   options: Options,
   page: Page,
 ) {
+  console.log(path);
   const html = `
     <html>
       <style>
@@ -21,15 +22,14 @@ export async function load_svg(
         }
       </style>
       <body>
-        <img src="${filePath}" />
+        <img src="${path}" />
       </body>
     </html>
   `;
   try {
     const temp_file_path = join(dirname(Deno.cwd()), "../temp.html");
-    console.log(`Temp file created at: ${temp_file_path}`)
     Deno.writeTextFileSync(temp_file_path, html);
-    await page.goto(temp_file_path);
+    await page.goto(`file://${temp_file_path}`);
   } catch (error) {
     console.log(`There was an error loading the SVG: ${error}`);
     Deno.exit(1);
