@@ -26,8 +26,10 @@ export async function load_svg(
     </html>
   `;
   try {
-    Deno.writeTextFileSync(join(dirname(Deno.cwd()), "../temp.html"), html);
-    await page.goto(join(dirname(Deno.cwd()), "../temp.html"));
+    const temp_file_path = join(dirname(Deno.cwd()), "../temp.html");
+    console.log(`Temp file created at: ${temp_file_path}`)
+    Deno.writeTextFileSync(temp_file_path, html);
+    await page.goto(temp_file_path);
   } catch (error) {
     console.log(`There was an error loading the SVG: ${error}`);
     Deno.exit(1);
