@@ -1,5 +1,5 @@
 import { dirname, join } from "https://deno.land/std@0.93.0/path/mod.ts";
-import { Page } from "puppeteer";
+import { Page } from "https://deno.land/x/puppeteer@16.2.0/mod.ts";
 import { Options } from "../types.ts";
 
 export async function load_svg(

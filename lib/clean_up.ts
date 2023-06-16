@@ -1,4 +1,4 @@
-import { Page } from "puppeteer";
+import { Page } from 'https://deno.land/x/puppeteer@16.2.0/mod.ts' ;
 
 export async function clean_up(page: Page) {
   try {
