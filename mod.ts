@@ -9,6 +9,7 @@ export default async function convert(
   output: string,
   options: Options,
 ) {
+  console.log(import.meta.url)
   const page = await create_browser();
   await load_svg(input, options, page);
   await converter(page, output, options);
