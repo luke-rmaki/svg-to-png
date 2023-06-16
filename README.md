@@ -6,7 +6,7 @@ rendering and capturing the SVG.
 ## Usage
 
 ```js
-import convert from "https://deno.land/x/svg-to-png/mod.ts";
+import convert from "https://deno.land/x/svg_to_png/mod.ts";
 
 await convert("path/to/svg/file.svg", "path/to/png/file.png", Options);
 ```
@@ -24,7 +24,7 @@ await convert("path/to/svg/file.svg", "path/to/png/file.png", Options);
 ## Example
 
 ```js
-import convert from "https://deno.land/x/svg-to-png/mod.ts";
+import convert from "https://deno.land/x/svg_to_png/mod.ts";
 
 await convert("path/to/svg/file.svg", "path/to/png/file.png", {
   width: 100,
