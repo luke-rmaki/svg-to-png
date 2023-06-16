@@ -1,16 +1,17 @@
 import { dirname, join } from "https://deno.land/std@0.93.0/path/mod.ts";
 import { Page } from "puppeteer";
+import { Options } from "../types.ts";
 
 export async function load_svg(
   filePath: string,
-  background: string,
+  options: Options,
   page: Page,
 ) {
   const html = `
     <html>
       <style>
         body {
-          background-color: ${background};
+          background-color: ${options.background_color || "#fff"};
           margin: 0;
           padding: 0;
         }
