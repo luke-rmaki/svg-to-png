@@ -7,7 +7,6 @@ export async function load_svg(
   options: Options,
   page: Page,
 ) {
-  console.log(path);
   const html = `
     <html>
       <style>
@@ -17,8 +16,10 @@ export async function load_svg(
           padding: 0;
         }
         img {
-          height: 200px;
-          width: 200px;
+          height: ${options.height}px;
+          width: ${options.width}px;
+          margin: 0;
+          padding: 0;
         }
       </style>
       <body>
